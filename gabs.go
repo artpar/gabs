@@ -107,6 +107,8 @@ func (g *Container) Search(hierarchy ...string) *Container {
 				res := tmpGabs.Search(hierarchy[target:]...).Data()
 				if res != nil {
 					tmpArray = append(tmpArray, res)
+				} else {
+					tmpArray = append(tmpArray, nil)
 				}
 			}
 			if len(tmpArray) == 0 {
